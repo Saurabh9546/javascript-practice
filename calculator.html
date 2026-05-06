@@ -4,25 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 340px;
+            height: auto;
+            padding-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        button {
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+            margin: 0px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+        }
+
+        .buttons {
+             display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <input type="number">
-    <button onclick="setOperator('+')">+</button>
-    <button onclick="setOperator('-')">-</button>
-    <button onclick="setOperator('*')">*</button>
-    <button onclick="setOperator('/')">/</button>
-    <button onclick="calculate()">=</button>
-    <button onclick="clear()">Clear</button>
-    <button onclick="appendNumber('1')">1</button>
-    <button onclick="appendNumber('2')">2</button>
-    <button onclick="appendNumber('3')">3</button>
-    <button onclick="appendNumber('4')">4</button>
-    <button onclick="appendNumber('5')">5</button>
-    <button onclick="appendNumber('6')">6</button>
-    <button onclick="appendNumber('7')">7</button>
-    <button onclick="appendNumber('8')">8</button>
-    <button onclick="appendNumber('9')">9</button>
-    <button onclick="appendNumber('0')">0</button>
+    <div class="calculator">
+        <input type="number">
+        <div class="buttons">
+            <button onclick="setOperator('+')">+</button>
+            <button onclick="setOperator('-')">-</button>
+            <button onclick="setOperator('*')">*</button>
+            <button onclick="setOperator('/')">/</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="clear()">Clear</button>
+        </div>
+    </div>
 
     <script>
         let firstNumber = ""
